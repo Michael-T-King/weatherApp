@@ -4,6 +4,7 @@
     box-sizing: border-box;
     list-style: none;
     font-family: Cambria Mat, sans-serif;
+    forced-color-adjust: none;
 }
 
 body {
