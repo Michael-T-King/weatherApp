@@ -41,11 +41,11 @@ form[1].addEventListener('click', (event) => {
             
             data.innerHTML = `
                 <p class="sun__rise">
-                    <img class="dayTime" src="/sunRise.png">
+                    <img class="dayTime" src="./sunRise.png">
                     ${sunriseDate}
                 </p>
                 <p class="sun__set">
-                    <img class="dayTime" src="/sunSat.png">
+                    <img class="dayTime" src="./sunSat.png">
                     ${sunsetDate}
                 </p>
                 <h1 class="country">${json.sys.country}</h1>
@@ -53,12 +53,12 @@ form[1].addEventListener('click', (event) => {
                 <h3 class="temp">${Math.floor(json.main.temp - 273.15)}\u00B0C</h3>
                 <h4 class="clouds">${json.weather[0].description}</h4>
 
-                <h4 class="wind"> <img class = "dayTime" src = "/windpng.png">  
+                <h4 class="wind"> <img class = "dayTime" src = "./windpng.png">  
                 Wind: ${json.wind.deg}\u00B0 ${Math.ceil(json.wind.speed)} m/s     <p class = "gusts">gust:${Math.ceil(Gust)} m/s</p></h4>
 
                 <h4 class = "pressure"> QNH ${json.main.pressure}HPa</h4>
                 
-                <<h4 class="time">Time: ${Hours - json.timezone / 3600}: ${Minutes}</h4>
+                <h4 class="time">Time: ${Hours - json.timezone / 3600}: ${Minutes}</h4>
                 <img class="img" src="http://openweathermap.org/img/w/${json.weather[0].icon}.png">
             `;
             console.log(json.timezone / 3600);
