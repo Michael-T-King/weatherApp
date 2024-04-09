@@ -170,7 +170,7 @@ z-index: 3;
 @media (max-width: 1065px){
     .container {
         width: 50%;
-        height: 70%;
+        height: 80%;
         background-color: #f0ebd7;
         border-radius: 50px;
         }
@@ -261,6 +261,10 @@ top: 160px;
 }
 
 @media (max-width: 728px){
+    .container {
+        width: 90%;
+        height: 80%;
+        }
 
     input {
         width: 12rem;
@@ -295,7 +299,7 @@ top: 160px;
     }
     
     .country {
-        left: 0;
+        left: 10px;
         margin: 0;
         right: 10px;
         top: 80px;
