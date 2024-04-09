@@ -14,12 +14,12 @@ body {
     justify-content: center;
     align-items: center;
     background: linear-gradient(#00BFFF, #00FFFF);
-    height: 100vh;
+    height: 100dvh;
     margin: 0;
   }
 
   form {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
 
   input {
@@ -155,10 +155,10 @@ left: 200px;
 .made__by {
     position: absolute;
     right: 40px;
-    top: 390px;
+    top: 90%;
 color: #777;
 font-size: 12px;
-z-index: 3;
+z-index: 93;
 }
 
 @media (max-width: 1366px){
@@ -206,6 +206,8 @@ z-index: 3;
 
     input {
         width: 16rem;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 
     .btn__city {
@@ -262,6 +264,7 @@ top: 160px;
 
 @media (max-width: 728px){
     .container {
+        margin-top: 0;
         width: 90%;
         height: 80%;
         }
@@ -299,7 +302,7 @@ top: 160px;
     }
     
     .country {
-        left: 10px;
+        left: 90%;
         margin: 0;
         right: 10px;
         top: 80px;
@@ -347,11 +350,11 @@ font-size: 32px;
     
     .made__by {
         position: absolute;
-        right: 40px;
-        top: 390px;
+       margin-left: 30px;
+        margin-top: 10px;
     color: #777;
     font-size: 12px;
-    z-index: 3;
+    z-index: 999;
     }
 
 }
