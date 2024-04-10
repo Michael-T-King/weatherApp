@@ -45,7 +45,7 @@ body {
 
 .container {
 width: 40%;
-height: 30em;
+height: 35em;
 border-radius: 50px;
 }
 
@@ -169,7 +169,6 @@ z-index: 93;
     .container {
         width: 50%;
         height: 80%;
-        background-color: #f0ebd7;
         border-radius: 50px;
         }
 
@@ -265,6 +264,7 @@ top: 160px;
         margin-top: 0;
         width: 90%;
         height: 80%;
+        border-radius: 10px;
         }
 
     input {
