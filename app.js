@@ -82,11 +82,11 @@ form[1].addEventListener('click', (event) => {
             data.innerHTML = `
                 <p class="sun__rise">
                     <img class="day__time" src="./sunRise.png">
-                    ${sunriseTime}
+                    loc.time ${sunriseTime}
                 </p>
                 <p class="sun__set">
                     <img class="day__time" src="./sunSat.png">
-                    ${sunSetTime}
+                    loc.time ${sunSetTime}
                 </p>
                 <h1 class="country">${json.sys.country}</h1>
                 <h2 class="city">${json.name}</h2>
@@ -98,7 +98,7 @@ form[1].addEventListener('click', (event) => {
                     <p class="gusts">gust: ${Math.ceil(gust)} m/s</p>
                 </h4>
                 <h4 class="pressure">QNH ${json.main.pressure} hPa</h4>
-                <h4 class="time">Time: ${hours}:${minutes}:${seconds}</h4>
+                <h4 class="time">Loc.Time: ${hours}:${minutes}:${seconds}</h4>
                 <img class="img" src="http://openweathermap.org/img/wn/${json.weather[0].icon}@2x.png">
             `;
 
@@ -108,7 +108,7 @@ form[1].addEventListener('click', (event) => {
             let wind = document.querySelector('.wind');
             let time = document.querySelector('.time');
             
-            if (hours > 5 && hours < 17) {
+            if (hours >= 5 && hours < 17) {
             container.style.backgroundImage = "url('./day.jpg')";
             container.style.backgroundSize = "cover";
             container.style.backgroundRepeat = "no-repeat";
@@ -125,16 +125,16 @@ form[1].addEventListener('click', (event) => {
             }
             
             else {
-              container.style.backgroundImage = "url('./night.jpg')";
-              container.style.backgroundSize = "cover";
-              container.style.backgroundRepeat = "no-repeat";
-              container.style.backgroundPosition = "center";
-              container.style.backgroundColor = "rgba(0,0,0, 0.4)";
-              container.style.color = "#fff";
-              city.style.color = "#666";
-              wind.style.color = "#666";
-              pressure.style.color = "#777";
-              time.style.color = "#666";
+            container.style.backgroundImage = "url('./night.jpg')";
+            container.style.backgroundSize = "cover";
+            container.style.backgroundRepeat = "no-repeat";
+            container.style.backgroundPosition = "center";
+            container.style.backgroundColor = "rgba(0,0,0, 0.4)";
+            container.style.color = "#fff";
+            city.style.color = "#666";
+            wind.style.color = "#666";
+            pressure.style.color = "#777";
+            time.style.color = "#666";
             }
 
         });
