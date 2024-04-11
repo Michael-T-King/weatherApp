@@ -49,6 +49,7 @@ height: 35em;
 border-radius: 50px;
 }
 
+
 .data {
     position: relative;
 }
@@ -231,7 +232,7 @@ top: 160px;
     }
     
     .clouds {
-        top: 340px;
+        top: 320px;
     }
     .wind {
 
@@ -327,32 +328,37 @@ font-size: 32px;
     
     .clouds {
         font-size: 16px;
+        color: #fff;
     }
     
     .wind {
         font-size: 18px;  
+        color: #fff;
     }
     .gusts {
         top: 30px;
         left: 70px;
+        color: #e49797;
+        font-weight: bold;
     }
     
     .pressure {
         font-size: 20px;
-
+        color: #fff;
     }
     
     .time {
         font-size: 18px;
+        color: #00BFFF;
     }
     
     .made__by {
         position: absolute;
        margin-left: 30px;
         margin-top: 10px;
-    color: #777;
+    color: #ffffff;
     font-size: 12px;
-    z-index: 999;
+    z-index: 9;
     }
 
 }

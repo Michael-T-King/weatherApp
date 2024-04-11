@@ -14,13 +14,22 @@ form[1].addEventListener('click', (event) => {
             }
             form[0].value = "";
 
+        // считаем местное время выбранного города ----------------------
+        let GTM = json.timezone/3600;
+        let times = new Date();
+        let hours = (times.getUTCHours() + GTM) %24;
+        let minutes = times.getMinutes();
+
+        if (hours < 0) {
+            hours += 24;
+        }
+
         // считаем восход солнца -----------------------------
             let sunriseTimestamp = json.sys.sunrise;
             let sunriseSeconds = sunriseTimestamp % 60;
             let sunriseMinutes = Math.floor((sunriseTimestamp / 60) % 60);
             let sunriseHours = Math.floor((sunriseTimestamp / 3600) % 24);
 
-            let GTM = json.timezone/3600;
             let sunriseHoursGTM = (sunriseHours + GTM)%24;
             if (sunriseHoursGTM < 0) {
                 sunriseHoursGTM += 24;
@@ -44,18 +53,18 @@ form[1].addEventListener('click', (event) => {
             let sunSetHoursGTM = (sunSetHours + GTM)%24;
             if (sunSetHoursGTM < 0) {
                 sunSetHoursGTM += 24;
-              }
+            }
 
-              if (sunSetHoursGTM <10) {
+            if (sunSetHoursGTM <10) {
                 sunSetHoursGTM  = `0${sunSetHoursGTM }`
             }
 
-              if (sunSetMinutes <10) {
+            if (sunSetMinutes <10) {
                 sunSetMinutes = `0${sunSetMinutes}`
             }
             let sunSetTime = `${sunSetHoursGTM}:${sunSetMinutes}`;
 
-            let currentDate = new Date();
+        /* let currentDate = new Date();
             let localTime = currentDate.getTime() + (currentDate.getTimezoneOffset() * 60000);
             let targetTime = localTime + (json.timezone * 1000);
 
@@ -63,7 +72,8 @@ form[1].addEventListener('click', (event) => {
 
             let hours = targetDate.getHours();
             let minutes = targetDate.getMinutes();
-            let seconds = targetDate.getSeconds();
+            let seconds = targetDate.getSeconds();*/
+            
             if (hours < 10) {
                 hours = `0${hours}`;
             }
@@ -72,12 +82,7 @@ form[1].addEventListener('click', (event) => {
                 minutes = `0${minutes}`;
             }
 
-            if (seconds < 10) {
-                seconds = `0${seconds}`;
-            }
-
             let gust = json.wind.gust || 0;
-
 
             data.innerHTML = `
                 <p class="sun__rise">
@@ -98,7 +103,7 @@ form[1].addEventListener('click', (event) => {
                     <p class="gusts">gust: ${Math.ceil(gust)} m/s</p>
                 </h4>
                 <h4 class="pressure">QNH ${json.main.pressure} hPa</h4>
-                <h4 class="time">Loc.Time: ${hours}:${minutes}:${seconds}</h4>
+                <h4 class="time">Loc.Time: ${hours}:${minutes}</h4>
                 <img class="img" src="http://openweathermap.org/img/wn/${json.weather[0].icon}@2x.png">
             `;
 
@@ -107,6 +112,7 @@ form[1].addEventListener('click', (event) => {
             let city = document.querySelector('.city');
             let wind = document.querySelector('.wind');
             let time = document.querySelector('.time');
+            let clouds  =document.querySelector('.clouds');
             
             if (hours >= 5 && hours < 17) {
             container.style.backgroundImage = "url('./day.jpg')";
@@ -132,11 +138,10 @@ form[1].addEventListener('click', (event) => {
             container.style.backgroundColor = "rgba(0,0,0, 0.4)";
             container.style.color = "#fff";
             city.style.color = "#666";
-            wind.style.color = "#666";
-            pressure.style.color = "#777";
-            time.style.color = "#666";
+            wind.style.color = "#fff";
+            clouds.style.color = "#fff";
+            pressure.style.color = "#fff";
+            time.style.color = "#00BFFF";
             }
-
         });
-
 });
